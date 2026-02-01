@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔨</text></svg>">
+    <title>Política de Cookies | Reformas Rivas-Vaciamadrid</title>
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Preload & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f5be0b', 
+                        secondary: '#4a4b4f',
+                        accent: '#f5be0b',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        html { scroll-behavior: smooth; }
+        
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white shadow-md transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center group" aria-label="Inicio">
+                <img src="images/logo ajustado.png" alt="Reformas en Rivas-Vaciamadrid" class="h-20 w-auto" loading="eager">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="font-medium text-slate-700 hover:text-primary uppercase">INICIO</a>
+                <div class="relative group py-4">
+                    <a href="index.html#servicios" class="font-medium text-slate-700 hover:text-primary flex items-center gap-1 uppercase">
+                        SERVICIOS
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <!-- Dropdown -->
+                    <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 hidden group-hover:block border border-slate-100">
+                        <a href="reformas-integrales.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS INTEGRALES</a>
+                        <a href="reformas-banos.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE BAÑOS</a>
+                        <a href="reformas-cocinas.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE COCINAS</a>
+                        <a href="reformas-pisos.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE PISOS</a>
+                        <a href="reformas-locales.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE LOCALES</a>
+                        <a href="otros-servicios.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">OTROS SERVICIOS</a>
+                    </div>
+                </div>
+                <a href="nuestros-proyectos.html" class="font-medium text-slate-700 hover:text-primary uppercase">NUESTROS PROYECTOS</a>
+                <a href="contacto.html" class="font-medium text-slate-700 hover:text-primary uppercase">CONTACTO</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+34919932067" class="hidden md:flex items-center gap-2 bg-primary hover:bg-secondary text-white px-5 py-2.5 lg:px-4 lg:py-2 rounded-lg font-bold transition-all shadow-lg hover:shadow-primary/30" aria-label="Llamar ahora">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    <span>LLAMAR AHORA</span>
+                </a>
+                
+                <button id="menu-toggle" class="lg:hidden p-2 text-slate-700 hover:text-primary" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 p-6 overflow-y-auto lg:hidden">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-heading font-bold text-xl text-slate-900">Menú</span>
+                <button id="menu-close" class="text-slate-500 hover:text-red-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+                <a href="index.html" class="font-medium text-lg text-slate-800 uppercase border-b border-slate-100 pb-2">INICIO</a>
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="block text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Servicios</span>
+                    <a href="reformas-integrales.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS INTEGRALES</a>
+                    <a href="reformas-banos.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE BAÑOS</a>
+                    <a href="reformas-cocinas.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE COCINAS</a>
+                    <a href="reformas-pisos.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE PISOS</a>
+                    <a href="reformas-locales.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE LOCALES</a>
+                    <a href="otros-servicios.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 rounded-r uppercase">OTROS SERVICIOS</a>
+                </div>
+                <a href="nuestros-proyectos.html" class="font-medium text-lg text-slate-800 uppercase">NUESTROS PROYECTOS</a>
+                <a href="contacto.html" class="font-medium text-lg text-slate-800 uppercase">CONTACTO</a>
+            </nav>
+        </div>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden backdrop-blur-sm"></div>
+    </header>
+
+    <main class="pt-32 pb-20 flex-grow">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="font-heading font-black text-3xl md:text-4xl text-slate-900 mb-8">Política de Cookies</h1>
+            
+            <div class="prose prose-slate max-w-none text-slate-600">
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">1. ¿Qué son las cookies?</h2>
+                <p class="mb-4">Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">2. Tipos de cookies que utiliza esta web</h2>
+                <p class="mb-4">Esta página web utiliza los siguientes tipos de cookies:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li><strong>Cookies técnicas:</strong> Son aquellas que permiten al usuario la navegación a través de una página web, plataforma o aplicación y la utilización de las diferentes opciones o servicios que en ella existan.</li>
+                    <li><strong>Cookies de personalización:</strong> Son aquellas que permiten al usuario acceder al servicio con algunas características de carácter general predefinidas en función de una serie de criterios en el terminal del usuario.</li>
+                    <li><strong>Cookies de análisis:</strong> Son aquellas que bien tratadas por nosotros o por terceros, nos permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofertado. Para ello se analiza su navegación en nuestra página web con el fin de mejorar la oferta de productos o servicios que le ofrecemos.</li>
+                </ul>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">3. Gestión de cookies</h2>
+                <p class="mb-4">Puede usted permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador.</p>
+                <p class="mb-4">A continuación le ofrecemos enlaces en los que encontrará información sobre cómo puede activar sus preferencias en los principales navegadores:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li><a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Chrome</a></li>
+                    <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Mozilla Firefox</a></li>
+                    <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Safari</a></li>
+                    <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Internet Explorer / Edge</a></li>
+                </ul>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">4. Aceptación de cookies</h2>
+                <p class="mb-4">Al acceder a este sitio web por primera vez, verá un banner informándole de la utilización de cookies y donde puede consultar esta Política de Cookies. Si consiente la utilización de cookies, continúa navegando utilizando la barra de desplazamiento o hace clic en algún enlace (aceptar) se entenderá que usted ha consentido nuestra política de cookies y, por tanto, la aceptación para la instalación de las mismas en su equipo o dispositivo.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="mb-4 text-white">
+                        <span class="font-heading font-bold text-xl">Reformas Rivas-Vaciamadrid Cerro</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4">Empresa líder en reformas integrales y parciales en Rivas-Vaciamadrid. Calidad, compromiso y profesionalidad.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Servicios</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="reformas-integrales.html" class="hover:text-primary transition-colors">Reformas Integrales</a></li>
+                        <li><a href="reformas-banos.html" class="hover:text-primary transition-colors">Reformas de Baños</a></li>
+                        <li><a href="reformas-cocinas.html" class="hover:text-primary transition-colors">Reformas de Cocinas</a></li>
+                        <li><a href="reformas-pisos.html" class="hover:text-primary transition-colors">Reformas de Pisos</a></li>
+                        <li><a href="reformas-locales.html" class="hover:text-primary transition-colors">Reformas de Locales</a></li>
+                        <li><a href="otros-servicios.html" class="hover:text-primary transition-colors">Otros Servicios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="aviso-legal.html" class="hover:text-primary transition-colors">Aviso Legal</a></li>
+                        <li><a href="politica-privacidad.html" class="hover:text-primary transition-colors">Política de Privacidad</a></li>
+                        <li><a href="politica-cookies.html" class="hover:text-primary transition-colors">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Contacto</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Rda. del Parque Bellavista, 4, Local 4, 28522 Rivas-Vaciamadrid, Madrid
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <a href="tel:+34919932067" class="hover:text-primary">+34919932067</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:contacto@reformasrivas.com" class="hover:text-primary">contacto@reformasrivas.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; <span id="current-year">2024</span> Reformas en Rivas-Vaciamadrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('open');
+            if (isOpen) {
+                mobileMenu.classList.remove('open');
+                mobileOverlay.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            } else {
+                mobileMenu.classList.add('open');
+                mobileOverlay.classList.remove('hidden');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('open')) toggleMenu();
+            });
+        });
+
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔨</text></svg>">
+    <title>Aviso Legal | Reformas Rivas-Vaciamadrid</title>
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Preload & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#f5be0b', 
+                        secondary: '#4a4b4f',
+                        accent: '#f5be0b',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        html { scroll-behavior: smooth; }
+        
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white shadow-md transition-all duration-300" id="header">
+        <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center group" aria-label="Inicio">
+                <img src="images/logo ajustado.png" alt="Reformas en Rivas-Vaciamadrid" class="h-20 w-auto" loading="eager">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="font-medium text-slate-700 hover:text-primary uppercase">INICIO</a>
+                <div class="relative group py-4">
+                    <a href="index.html#servicios" class="font-medium text-slate-700 hover:text-primary flex items-center gap-1 uppercase">
+                        SERVICIOS
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <!-- Dropdown -->
+                    <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 hidden group-hover:block border border-slate-100">
+                        <a href="reformas-integrales.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS INTEGRALES</a>
+                        <a href="reformas-banos.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE BAÑOS</a>
+                        <a href="reformas-cocinas.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE COCINAS</a>
+                        <a href="reformas-pisos.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE PISOS</a>
+                        <a href="reformas-locales.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">REFORMAS DE LOCALES</a>
+                        <a href="otros-servicios.html" class="block px-4 py-2 hover:bg-slate-50 hover:text-primary text-sm uppercase">OTROS SERVICIOS</a>
+                    </div>
+                </div>
+                <a href="nuestros-proyectos.html" class="font-medium text-slate-700 hover:text-primary uppercase">NUESTROS PROYECTOS</a>
+                <a href="contacto.html" class="font-medium text-slate-700 hover:text-primary uppercase">CONTACTO</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="tel:+34919932067" class="hidden md:flex items-center gap-2 bg-primary hover:bg-secondary text-white px-5 py-2.5 lg:px-4 lg:py-2 rounded-lg font-bold transition-all shadow-lg hover:shadow-primary/30" aria-label="Llamar ahora">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    <span>LLAMAR AHORA</span>
+                </a>
+                
+                <button id="menu-toggle" class="lg:hidden p-2 text-slate-700 hover:text-primary" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 p-6 overflow-y-auto lg:hidden">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-heading font-bold text-xl text-slate-900">Menú</span>
+                <button id="menu-close" class="text-slate-500 hover:text-red-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+                <a href="index.html" class="font-medium text-lg text-slate-800 uppercase border-b border-slate-100 pb-2">INICIO</a>
+                <div class="border-b border-slate-100 pb-4">
+                    <span class="block text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Servicios</span>
+                    <a href="reformas-integrales.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS INTEGRALES</a>
+                    <a href="reformas-banos.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE BAÑOS</a>
+                    <a href="reformas-cocinas.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE COCINAS</a>
+                    <a href="reformas-pisos.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE PISOS</a>
+                    <a href="reformas-locales.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 mb-1 rounded-r uppercase">REFORMAS DE LOCALES</a>
+                    <a href="otros-servicios.html" class="block py-2 pl-2 text-slate-700 hover:text-primary border-l-2 border-transparent hover:border-primary bg-slate-50 rounded-r uppercase">OTROS SERVICIOS</a>
+                </div>
+                <a href="nuestros-proyectos.html" class="font-medium text-lg text-slate-800 uppercase">NUESTROS PROYECTOS</a>
+                <a href="contacto.html" class="font-medium text-lg text-slate-800 uppercase">CONTACTO</a>
+            </nav>
+        </div>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden backdrop-blur-sm"></div>
+    </header>
+
+    <main class="pt-32 pb-20 flex-grow">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="font-heading font-black text-3xl md:text-4xl text-slate-900 mb-8">Aviso Legal</h1>
+            
+            <div class="prose prose-slate max-w-none text-slate-600">
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">1. Datos Identificativos</h2>
+                <p class="mb-4">En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li><strong>Titular del dominio web:</strong> Reformas Rivas-Vaciamadrid Cerro (en adelante, "el Responsable")</li>
+                    <li><strong>Domicilio:</strong> Rda. del Parque Bellavista, 4, Local 4, 28522 Rivas-Vaciamadrid, Madrid</li>
+                    <li><strong>Correo electrónico de contacto:</strong> <a href="mailto:contacto@reformasrivas.com" class="text-primary hover:underline">contacto@reformasrivas.com</a></li>
+                    <li><strong>Teléfono:</strong> +34 919 932 067</li>
+                    <li><strong>Sitio Web:</strong> reformasrivas.com</li>
+                </ul>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">2. Usuarios</h2>
+                <p class="mb-4">El acceso y/o uso de este portal atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas. Las citadas Condiciones serán de aplicación independientemente de las Condiciones Generales de Contratación que en su caso resulten de obligado cumplimiento.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">3. Uso del Portal</h2>
+                <p class="mb-4">Este sitio web proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes al Responsable o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal.</p>
+                <p class="mb-4">El USUARIO se compromete a hacer un uso adecuado de los contenidos y servicios que el Responsable ofrece a través de su portal y con carácter enunciativo pero no limitativo, a no emplearlos para:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li>Incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.</li>
+                    <li>Difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del terrorismo o atentatorio contra los derechos humanos.</li>
+                    <li>Provocar daños en los sistemas físicos y lógicos del Responsable, de sus proveedores o de terceras personas, introducir o difundir en la red virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean susceptibles de provocar los daños anteriormente mencionados.</li>
+                </ul>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">4. Protección de Datos</h2>
+                <p class="mb-4">El Responsable cumple con las directrices de la normativa vigente en materia de protección de datos personales, el Reglamento (UE) 2016/679 de 27 de abril de 2016 (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre (LOPDGDD), y vela por garantizar un correcto uso y tratamiento de los datos personales del usuario. Para más información, consulte nuestra <a href="politica-privacidad.html" class="text-primary hover:underline">Política de Privacidad</a>.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">5. Propiedad Intelectual e Industrial</h2>
+                <p class="mb-4">El Responsable por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.), titularidad del Responsable o bien de sus licenciantes.</p>
+                <p class="mb-4">Todos los derechos reservados. En virtud de lo dispuesto en los artículos 8 y 32.1, párrafo segundo, de la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización del Responsable.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">6. Exclusión de Garantías y Responsabilidad</h2>
+                <p class="mb-4">El Responsable no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">7. Modificaciones</h2>
+                <p class="mb-4">El Responsable se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">8. Enlaces</h2>
+                <p class="mb-4">En el caso de que en la web se dispusiesen enlaces o hipervínculos hacía otros sitios de Internet, el Responsable no ejercerá ningún tipo de control sobre dichos sitios y contenidos. En ningún caso el Responsable asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un sitio web ajeno.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">9. Derecho de Exclusión</h2>
+                <p class="mb-4">El Responsable se reserva el derecho a denegar o retirar el acceso a portal y/o los servicios ofrecidos sin necesidad de preaviso, a instancia propia o de un tercero, a aquellos usuarios que incumplan las presentes Condiciones Generales de Uso.</p>
+
+                <h2 class="text-xl font-bold text-slate-900 mt-8 mb-4">10. Legislación Aplicable y Jurisdicción</h2>
+                <p class="mb-4">La relación entre el Responsable y el USUARIO se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Madrid.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="mb-4 text-white">
+                        <span class="font-heading font-bold text-xl">Reformas Rivas-Vaciamadrid Cerro</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4">Empresa líder en reformas integrales y parciales en Rivas-Vaciamadrid. Calidad, compromiso y profesionalidad.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Servicios</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="reformas-integrales.html" class="hover:text-primary transition-colors">Reformas Integrales</a></li>
+                        <li><a href="reformas-banos.html" class="hover:text-primary transition-colors">Reformas de Baños</a></li>
+                        <li><a href="reformas-cocinas.html" class="hover:text-primary transition-colors">Reformas de Cocinas</a></li>
+                        <li><a href="reformas-pisos.html" class="hover:text-primary transition-colors">Reformas de Pisos</a></li>
+                        <li><a href="reformas-locales.html" class="hover:text-primary transition-colors">Reformas de Locales</a></li>
+                        <li><a href="otros-servicios.html" class="hover:text-primary transition-colors">Otros Servicios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="aviso-legal.html" class="hover:text-primary transition-colors">Aviso Legal</a></li>
+                        <li><a href="politica-privacidad.html" class="hover:text-primary transition-colors">Política de Privacidad</a></li>
+                        <li><a href="politica-cookies.html" class="hover:text-primary transition-colors">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Contacto</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Rda. del Parque Bellavista, 4, Local 4, 28522 Rivas-Vaciamadrid, Madrid
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <a href="tel:+34919932067" class="hover:text-primary">+34919932067</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:contacto@reformasrivas.com" class="hover:text-primary">contacto@reformasrivas.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; <span id="current-year">2024</span> Reformas en Rivas-Vaciamadrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('open');
+            if (isOpen) {
+                mobileMenu.classList.remove('open');
+                mobileOverlay.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            } else {
+                mobileMenu.classList.add('open');
+                mobileOverlay.classList.remove('hidden');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('open')) toggleMenu();
+            });
+        });
+
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
