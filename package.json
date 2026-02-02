@@ -1,0 +1,16 @@
+{
+  "name": "reformas-alcobendas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "optimize": "node optimize-images.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
