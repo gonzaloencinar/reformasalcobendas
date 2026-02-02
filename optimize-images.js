@@ -22,35 +22,38 @@ function getAllFiles(dirPath, arrayOfFiles) {
 
 const allFiles = getAllFiles(directoryPath);
 
-allFiles.forEach(async (file) => {
-  const ext = path.extname(file).toLowerCase();
-  
-  if (['.jpg', '.jpeg', '.png'].includes(ext)) {
-    console.log(`Optimizing: ${file}`);
+(async () => {
+  for (const file of allFiles) {
+    const ext = path.extname(file).toLowerCase();
     
-    try {
-      const buffer = await fs.promises.readFile(file);
-      const metadata = await sharp(buffer).metadata();
+    if (['.jpg', '.jpeg', '.png'].includes(ext)) {
+      console.log(`Converting to WebP: ${file}`);
       
-      let pipeline = sharp(buffer);
+      try {
+        const buffer = await fs.promises.readFile(file);
+        const metadata = await sharp(buffer).metadata();
+        
+        let pipeline = sharp(buffer);
 
-      // Resize if too large
-      if (metadata.width > 1920) {
-        pipeline = pipeline.resize({ width: 1920 });
+        // Resize if too large
+        if (metadata.width > 1920) {
+          pipeline = pipeline.resize({ width: 1920 });
+        }
+
+        pipeline = pipeline.webp({ quality: 80 });
+
+        const newFilePath = file.replace(ext, '.webp');
+        
+        const outputBuffer = await pipeline.toBuffer();
+        
+        await fs.promises.writeFile(newFilePath, outputBuffer);
+        console.log(`Generated: ${newFilePath}`);
+        
+        // Optionally delete original file if you want to enforce WebP only
+        // await fs.promises.unlink(file); 
+      } catch (err) {
+        console.error(`Error processing ${file}:`, err);
       }
-
-      if (ext === '.png') {
-        pipeline = pipeline.png({ quality: 80, compressionLevel: 9, palette: true });
-      } else if (ext === '.jpg' || ext === '.jpeg') {
-        pipeline = pipeline.jpeg({ quality: 80, mozjpeg: true });
-      }
-
-      const outputBuffer = await pipeline.toBuffer();
-      
-      await fs.promises.writeFile(file, outputBuffer);
-      console.log(`Optimized: ${file}`);
-    } catch (err) {
-      console.error(`Error optimizing ${file}:`, err);
     }
   }
-});
+})();
